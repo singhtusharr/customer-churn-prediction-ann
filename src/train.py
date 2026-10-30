@@ -38,6 +38,9 @@ def load_data() -> pd.DataFrame:
 
 
 def train() -> dict:
+    # One call seeds Python, NumPy and TensorFlow so weight initialisation and batch
+    # shuffling repeat exactly: the same data gives the same model and the same metrics.
+    keras.utils.set_random_seed(RANDOM_STATE)
     df = load_data()
     X = df.drop(columns=[TARGET_COLUMN])
     y = df[TARGET_COLUMN]

@@ -5,3 +5,5 @@ __pycache__/
 saved_model/
 .vscode/
 .claude/launch.json
+*.pdf
+.DS_Store
